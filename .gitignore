@@ -1,0 +1,9 @@
+node_modules/
+build/
+dist/
+.env
+.env.test
+*.log
+.eslintcache
+coverage
+cookies.json

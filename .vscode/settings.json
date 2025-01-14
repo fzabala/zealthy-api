@@ -1,0 +1,10 @@
+{
+  "javascript.preferences.organizeImports": {
+    "source.organizeImports": "always"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.importModuleSpecifier": "non-relative"
+}

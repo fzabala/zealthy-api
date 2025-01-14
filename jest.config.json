@@ -1,0 +1,21 @@
+{
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "transform": {
+      "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!variables/.*)"
+    ],
+    "testMatch": [
+      "**/?(*.)+(spec|test).ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/database/",
+      "/src/index\\.ts$"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)": "<rootDir>/src/$1"
+    }
+}

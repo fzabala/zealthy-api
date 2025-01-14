@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+  zealthy_api:
+    container_name: zealthy_api
+    build: .
+    env_file: .env
+    environment:
+      - PORT=$PORT
+      - NODE_ENV=$NODE_ENV
+      - DB_HOSTNAME=$DB_HOSTNAME
+      - DB_NAME=$DB_NAME
+      - DB_USERNAME=$DB_USERNAME
+      - DB_PASSWORD=$DB_PASSWORD
+      - DB_DIALECT=$DB_DIALECT
+      - DB_STORAGE=$DB_STORAGE
+      - DB_PORT=$DB_PORT
+    volumes:
+      - .:/app
+    ports:
+      - '3300:3300'
+    depends_on:
+      - zealthy_db
+    command: npm run dev
+
+  zealthy_db:
+    container_name: zealthy_db
+    image: postgres:latest
+    ports:
+      - '5433:5432'
+    environment:
+      - POSTGRES_HOST=$DB_HOSTNAME
+      - POSTGRES_DB=$DB_NAME
+      - POSTGRES_USER=$DB_USERNAME
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+      - PGDATA=/var/lib/postgresql/data/pgdat
