@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node -r tsconfig-paths/register dist/index.js",
     "dev": "NODE_ENV=development nodemon --ignore src/__tests__ -r tsconfig-paths/register src/index.ts",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.prod.json",
     "lint": "eslint 'src/**/*.{js,ts}' --fix",
     "format": "prettier --write 'src/**/*.{js,ts,json}'",
     "test": "NODE_ENV=test jest --testTimeout=3000 --detectOpenHandles --coverage",
